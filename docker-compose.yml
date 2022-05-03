@@ -5,6 +5,8 @@ services:
     build: .
     ports:
       - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/
 
   db:
     image: postgres
@@ -17,6 +19,7 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
       - local_pgdata:/var/lib/postgresql/data
+      - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin4_container

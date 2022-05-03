@@ -16,3 +16,37 @@ CREATE TABLE IF NOT EXISTS tb_pets(
 
 
 );
+
+CREATE TABLE IF NOT EXISTS tb_admin(
+
+    _id varchar(600) not null primary key unique,
+    username varchar(100) not null,
+    passwd varchar(20)
+
+);
+
+CREATE TABLE IF NOT EXISTS tb_requisicoes(
+
+    _id varchar(600) not null primary key unique,
+    nome varchar(100) not null,
+    telefone varchar(20) not null,
+    email varchar(100) not null, 
+    _timestamp varchar(100) not null,
+    doc_num int not null,
+    endereco varchar(100) not null,
+    cep int not null,
+    status_req varchar(20)
+
+
+);
+
+CREATE TABLE IF NOT EXISTS tb_org(
+
+    _id varchar(600) not null primary key unique,
+    cnpj varchar(20) not null,
+    contato varchar(20) not null,
+    endereco varchar(100) not null,
+    cep int
+
+
+);
